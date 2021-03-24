@@ -11,7 +11,7 @@ from time import sleep
 
 width = 40
 height =40
-offset=6
+Threshold=2
 position = 400
 
 delay=60
@@ -63,7 +63,7 @@ while True:
         cv2.circle(frame1, center, 4, (0, 0,255), -1)
         
         for (x,y) in detector:
-            if y<(position + offset) and y>(position - offset):
+            if y<(position + Threshold) and y>(position - Threshold):
                 vehicle+=1
                 cv2.line(frame1, (25, position), (1200, position), (0,127,255), 3)  
                 detector.remove((x,y))
